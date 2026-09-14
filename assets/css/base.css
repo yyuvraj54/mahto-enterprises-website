@@ -1,0 +1,59 @@
+/* ============================================
+   BASE STYLES
+   Global typography, body, links, headings
+   ============================================ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  overflow-x: hidden;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--color-primary);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+
+p {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-light);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+img {
+  border-radius: var(--radius-sm);
+}

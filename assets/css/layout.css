@@ -1,0 +1,136 @@
+/* ============================================
+   LAYOUT PRIMITIVES
+   Container, grid, section patterns
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.section {
+  padding-block: var(--space-16);
+}
+
+.section--dark {
+  background-color: var(--color-charcoal);
+  color: var(--color-text-inverse);
+}
+
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: var(--color-white);
+}
+
+.section--dark p,
+.section--dark span,
+.section--dark li {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.section--light {
+  background-color: var(--color-off-white);
+}
+
+.section--accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin-inline: auto;
+  margin-bottom: var(--space-12);
+}
+
+.section-header__overline {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--fs-overline);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-overline);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.section-header__title {
+  margin-bottom: var(--space-4);
+}
+
+.section-header__subtitle {
+  font-size: var(--fs-body);
+  color: var(--color-dark-gray);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.section--dark .section-header__subtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.grid--2 {
+  grid-template-columns: 1fr;
+}
+
+.grid--3 {
+  grid-template-columns: 1fr;
+}
+
+.grid--4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Responsive grid */
+@media (min-width: 37.5em) {
+  .section {
+    padding-block: var(--space-20);
+  }
+
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 56.25em) {
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 75em) {
+  .section {
+    padding-block: var(--space-24);
+  }
+}

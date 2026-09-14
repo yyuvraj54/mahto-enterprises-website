@@ -1,0 +1,154 @@
+/* ============================================
+   ANIMATIONS & SCROLL REVEALS
+   ============================================ */
+
+/* ---- Keyframes ---- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroLoad {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes widthGrow {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ---- Scroll Reveal Base ---- */
+/* Only hide elements when JS is confirmed loaded.
+   Without .js on <html>, everything stays visible as a fallback. */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slow) var(--ease-default),
+              transform var(--duration-slow) var(--ease-default);
+}
+
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.js .reveal--left {
+  transform: translateX(-30px);
+}
+
+html.js .reveal--left.is-visible {
+  transform: translateX(0);
+}
+
+html.js .reveal--right {
+  transform: translateX(30px);
+}
+
+html.js .reveal--right.is-visible {
+  transform: translateX(0);
+}
+
+html.js .reveal--scale {
+  transform: scale(0.9);
+}
+
+html.js .reveal--scale.is-visible {
+  transform: scale(1);
+}
+
+/* Stagger delays */
+html.js .reveal--delay-1 { transition-delay: 100ms; }
+html.js .reveal--delay-2 { transition-delay: 200ms; }
+html.js .reveal--delay-3 { transition-delay: 300ms; }
+html.js .reveal--delay-4 { transition-delay: 400ms; }
+html.js .reveal--delay-5 { transition-delay: 500ms; }
+
+/* ---- Hero Load Animation ---- */
+.hero__overline {
+  animation: heroLoad 0.8s var(--ease-default) 0.2s both;
+}
+
+.hero__title {
+  animation: heroLoad 0.8s var(--ease-default) 0.4s both;
+}
+
+.hero__subtitle {
+  animation: heroLoad 0.8s var(--ease-default) 0.6s both;
+}
+
+.hero__cta-group {
+  animation: heroLoad 0.8s var(--ease-default) 0.8s both;
+}
+
+/* ---- Hover Lift ---- */
+.hover-lift {
+  transition: transform var(--duration-normal) var(--ease-default),
+              box-shadow var(--duration-normal) var(--ease-default);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
